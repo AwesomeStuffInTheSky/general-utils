@@ -1,0 +1,37 @@
+package pt.asits.util.argument.assertions;
+
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+
+public abstract class EnumTest<T extends Enum<?>> {
+
+
+	@Test
+	public void valuesTest() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
+			InvocationTargetException {
+		@SuppressWarnings( "unchecked" )
+		Class<T> clazz = (Class<T>)( (ParameterizedType)getClass().getGenericSuperclass() ).getActualTypeArguments()[ 0 ];
+		Method method = clazz.getMethod( "values" );
+		Object object = method.invoke( null );
+		Assert.assertTrue( "The return type should be 'Enum[]'.", object instanceof Enum[] );
+		Assert.assertEquals( "The array length should be 1.", 1, ( (Enum[])object ).length );
+	}
+
+
+	@Test
+	public void valueOfTest()
+			throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		@SuppressWarnings( "unchecked" )
+		Class<T> clazz = (Class<T>)( (ParameterizedType)getClass().getGenericSuperclass() ).getActualTypeArguments()[ 0 ];
+		Method method = clazz.getMethod( "valueOf", String.class );
+		Object object = method.invoke( null, "INSTANCE" );
+		Assert.assertTrue( "The return type should be 'Enum'.", object instanceof Enum );
+	}
+
+}
