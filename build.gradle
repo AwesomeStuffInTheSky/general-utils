@@ -10,7 +10,6 @@ compileJava.options.encoding = 'UTF-8'
 wrapper.gradleVersion = '2.7'
 
 
-version = "$System.env.VERSION"
 jar {
 	manifest {
 		attributes 'Implementation-Title': 'general-utils', 'Implementation-Version': version
