@@ -4,8 +4,6 @@ jdk:
 
 script:
   - ./gradlew test jacocoTestReport
-
-after_success:
   - ./gradlew coveralls
   - if [[ "$TRAVIS_TAG" == *"v1."* ]]; then
       ./gradlew bintrayUpload;
