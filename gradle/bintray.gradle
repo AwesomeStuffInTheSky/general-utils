@@ -48,6 +48,9 @@ bintray {
 		repo = 'maven'
 		userOrg = 'awesomestuffinthesky'
 		name = archivesBaseName
+		version {
+			vcsTag = 'v' + version;
+		}
 	}
 }
 
