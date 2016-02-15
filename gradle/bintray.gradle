@@ -38,6 +38,9 @@ publishing {
 }
 
 
+def vcsTagDef = 'v' + version
+
+
 bintray {
 	user = System.env.BINTRAY_USER
 	key = System.env.BINTRAY_KEY
@@ -46,7 +49,12 @@ bintray {
 
 	pkg {
 		repo = 'maven'
+		userOrg = 'awesomestuffinthesky'
 		name = archivesBaseName
+		
+		version {
+			vcsTag = vcsTagDef
+		}
 	}
 }
 
