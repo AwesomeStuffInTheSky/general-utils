@@ -1,15 +1,9 @@
-<div align="center">
-    <h1>General Utils</h1>
-</div>
+# General Utils
 
-<p align="center">
-    <a href="https://travis-ci.org/AwesomeStuffInTheSky/general-utils">
-        <img src="https://travis-ci.org/AwesomeStuffInTheSky/general-utils.svg?branch=master" alt="Build via Travis">
-    </a>
-    <a href="https://codecov.io/github/AwesomeStuffInTheSky/general-utils?branch=master">
-      <img src="https://codecov.io/github/AwesomeStuffInTheSky/general-utils/coverage.svg?branch=master" alt="Coverage via Codecov" />
-    </a>
-    <a href="https://www.codacy.com/app/pmig-caleia/general-utils">
-      <img src="https://api.codacy.com/project/badge/grade/3692e5b7e256495991b8a130dda476b0" alt="Code Review via Codacy" />
-    </a>
-</p>
+Travis: [![Automated Build via Coveralls](https://travis-ci.org/AwesomeStuffInTheSky/general-utils.svg)](https://travis-ci.org/AwesomeStuffInTheSky/general-utils)
+
+Coveralls: [![Test Coverage via Coveralls](https://coveralls.io/repos/github/AwesomeStuffInTheSky/general-utils/badge.svg)](https://coveralls.io/github/AwesomeStuffInTheSky/general-utils)
+
+Codacy: [![Code Review via Codacy](https://img.shields.io/codacy/3692e5b7e256495991b8a130dda476b0.svg)](https://www.codacy.com/app/pmig-caleia/general-utils)
+
+Bintray: [![Latest Version via Bintray](https://img.shields.io/bintray/v/pedrocaleia/maven/general-utils.svg)](https://bintray.com/pedrocaleia/maven/general-utils)
