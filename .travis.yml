@@ -2,8 +2,11 @@ language: java
 jdk:
   - oraclejdk8
 
-before_script:
-  - pip install --user codecov
+script:
+  - ./gradlew test jacocoTestReport
 
 after_success:
-  - codecov
+  - ./gradlew coveralls
+  - if [[ "$TRAVIS_TAG" == *"v1."* ]]; then
+      ./gradlew bintrayUpload;
+    fi

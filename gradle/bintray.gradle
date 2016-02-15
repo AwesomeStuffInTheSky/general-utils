@@ -1,0 +1,52 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+
+group = 'pt.asits'
+archivesBaseName = 'general-utils'
+
+
+task sourcesJar( type: Jar ) {
+	from sourceSets.main.allSource
+	classifier 'sources'
+}
+
+
+task javadocJar( type: Jar ) {
+	from javadoc
+	classifier 'javadoc'
+}
+
+
+task testsJar( type: Jar ) {
+	from sourceSets.test.allSource
+	classifier 'tests'
+}
+
+
+publishing {
+	publications {
+		GeneralUtils( MavenPublication ) {
+			from components.java
+			artifactId archivesBaseName
+
+			artifact sourcesJar
+			artifact javadocJar
+			artifact testsJar
+		}
+	}
+}
+
+
+bintray {
+	user = System.env.BINTRAY_USER
+	key = System.env.BINTRAY_KEY
+	publications = [ 'GeneralUtils' ]
+	publish = true
+
+	pkg {
+		repo = 'maven'
+		name = archivesBaseName
+	}
+}
+

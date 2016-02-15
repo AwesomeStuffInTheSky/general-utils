@@ -1,3 +1,9 @@
+plugins {
+    id "com.jfrog.bintray" version "1.6"
+    id "com.github.kt3k.coveralls" version "2.6.3"
+}
+
+
 apply plugin: 'java'
 apply plugin: 'wrapper'
 apply plugin: 'eclipse'
@@ -10,13 +16,6 @@ compileJava.options.encoding = 'UTF-8'
 wrapper.gradleVersion = '2.7'
 
 
-jar {
-	manifest {
-		attributes 'Implementation-Title': 'general-utils', 'Implementation-Version': version
-	}
-}
-
-
 repositories {
     mavenCentral()
 }
@@ -27,31 +26,6 @@ dependencies {
 }
 
 
-task sourcesJar( type: Jar, dependsOn: classes ) {
-	classifier = 'sources'
-	from sourceSets.main.allSource
-}
-
-
-task javadocJar( type: Jar, dependsOn: javadoc ) {
-	classifier = 'javadoc'
-	from javadoc.destinationDir
-}
-
-
-artifacts {
-	archives sourcesJar
-	archives javadocJar
-}
-
-
-jacocoTestReport {
-	reports {
-		xml.enabled = true
-		html.enabled = true
-	}
-}
-
-
-check.dependsOn jacocoTestReport
+apply from: "gradle/bintray.gradle"
+apply from: "gradle/test-coverage.gradle"
 
