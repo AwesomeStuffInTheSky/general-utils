@@ -33,5 +33,13 @@ public final class ConversionExceptionTest {
 		// To improve code quality, no real usefulness
 		Assert.assertTrue( true );
 	}
+	
+	
+	@Test
+	public void constructorUsingAMessageAndACauseTest() {
+		new ConversionException( "A message.", new IllegalArgumentException() );
+		// To improve code quality, no real usefulness
+		Assert.assertTrue( true );
+	}
 
 }
