@@ -22,7 +22,7 @@ public final class NotNullArgumentAssertionTest extends EnumTest<NotNullArgument
 
 
 	@Test
-	public void validateUsingAValidStringArgumentAndNameTest() {
+	public void assertArgumentUsingAStringArgumentTest() {
 		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "someName" );
 		// To improve code quality, no real usefulness
 		Assert.assertTrue( true );
@@ -30,30 +30,15 @@ public final class NotNullArgumentAssertionTest extends EnumTest<NotNullArgument
 
 
 	@Test
-	public void validateUsingAValidStringArgumentAndNameTest_2() {
-		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "someName1", new Object(), "someName2" );
-		// To improve code quality, no real usefulness
-		Assert.assertTrue( true );
-	}
-
-
-	@Test
-	public void validateUsingAValidStringArgumentAndNameTest_3() {
-		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "someName1", new Object(), "someName2", "anotherString",
-				"someName3" );
-		// To improve code quality, no real usefulness
-		Assert.assertTrue( true );
-	}
-
-
-	@Test
-	public void validateUsingAValidObjectArgumentAndNameTest() {
+	public void assertArgumentUsingAObjectArgumentTest() {
 		NotNullArgumentAssertion.INSTANCE.assertArgument( new Object(), "someName" );
+		// To improve code quality, no real usefulness
+		Assert.assertTrue( true );
 	}
 
 
 	@Test
-	public void validateUsingANullArgumentAndAValidNameTest() {
+	public void assertArgumentUsingAStringArgumentAndANullNameTest() {
 		this.expectedException.expect( IllegalArgumentException.class );
 		this.expectedException.expectMessage( "The argument 'someName' cannot be null." );
 		NotNullArgumentAssertion.INSTANCE.assertArgument( null, "someName" );
@@ -62,7 +47,7 @@ public final class NotNullArgumentAssertionTest extends EnumTest<NotNullArgument
 
 
 	@Test
-	public void validateUsingAStringArgumentAndANullNameTest() {
+	public void assertArgumentUsingANullArgumentNameTest() {
 		this.expectedException.expect( IllegalArgumentException.class );
 		this.expectedException.expectMessage( "The argument 'argumentName' cannot be null or empty." );
 		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", null );
@@ -71,47 +56,55 @@ public final class NotNullArgumentAssertionTest extends EnumTest<NotNullArgument
 
 
 	@Test
-	public void validateUsingANullArgumentAndANullNameTest() {
+	public void assertArgumentUsingAnEmptyArgumentNameTest() {
 		this.expectedException.expect( IllegalArgumentException.class );
 		this.expectedException.expectMessage( "The argument 'argumentName' cannot be null or empty." );
-		NotNullArgumentAssertion.INSTANCE.assertArgument( null, null );
+		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "" );
 		Assert.fail( "An exception should have been throwed." );
 	}
 
 
 	@Test
-	public void validateUsingANullArgumentAndAEmptyStringNameTest() {
+	public void assertArgumentUsingAStringWithASpaceArgumentNameTest() {
 		this.expectedException.expect( IllegalArgumentException.class );
 		this.expectedException.expectMessage( "The argument 'argumentName' cannot be null or empty." );
-		NotNullArgumentAssertion.INSTANCE.assertArgument( null, "" );
+		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", " " );
 		Assert.fail( "An exception should have been throwed." );
 	}
 
 
 	@Test
-	public void validateUsingANullArgumentAndANameWithJustASpaceTest() {
+	public void assertArgumentUsingAStringWithATabArgumentNameTest() {
 		this.expectedException.expect( IllegalArgumentException.class );
 		this.expectedException.expectMessage( "The argument 'argumentName' cannot be null or empty." );
-		NotNullArgumentAssertion.INSTANCE.assertArgument( null, " " );
+		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "\t" );
 		Assert.fail( "An exception should have been throwed." );
 	}
 
 
 	@Test
-	public void validateUsingANullArgumentAndANameWithJustATabTest() {
+	public void assertArgumentUsingAStringWithANewlineArgumentNameTest() {
 		this.expectedException.expect( IllegalArgumentException.class );
 		this.expectedException.expectMessage( "The argument 'argumentName' cannot be null or empty." );
-		NotNullArgumentAssertion.INSTANCE.assertArgument( null, "\t" );
+		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "\n" );
 		Assert.fail( "An exception should have been throwed." );
 	}
 
 
 	@Test
-	public void validateUsingANullArgumentAndANameWithASpaceAndATabTest() {
-		this.expectedException.expect( IllegalArgumentException.class );
-		this.expectedException.expectMessage( "The argument 'argumentName' cannot be null or empty." );
-		NotNullArgumentAssertion.INSTANCE.assertArgument( null, " \t" );
-		Assert.fail( "An exception should have been throwed." );
+	public void assertArgumentUsingTwoArgumentsTest() {
+		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "someName1", new Object(), "someName2" );
+		// To improve code quality, no real usefulness
+		Assert.assertTrue( true );
+	}
+
+
+	@Test
+	public void assertArgumentUsingThreeArgumentsTest() {
+		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "someName1", new Object(), "someName2", "anotherString",
+				"someName3" );
+		// To improve code quality, no real usefulness
+		Assert.assertTrue( true );
 	}
 
 }
