@@ -1,6 +1,7 @@
 package pt.asits.util;
 
 
+import java.lang.reflect.Array;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,6 +40,21 @@ public interface ObjectConverter<T, K> {
 				kList.add( null );
 		}
 		return kList;
+	}
+
+
+	@SuppressWarnings( "unchecked" )
+	default public K[] convertArray( Class<K> clazz, T ... tArray ) throws ConversionException {
+		NotNullArgumentAssertion.INSTANCE.assertArgument( clazz, "clazz" );
+		NotNullArgumentAssertion.INSTANCE.assertArgument( tArray, "tArray" );
+		K[] kArray = (K[])Array.newInstance( clazz, tArray.length );
+		for( int n = 0; n < tArray.length; n++ ) {
+			if( tArray[ n ] != null )
+				kArray[ n ] = ( this.convert( tArray[ n ] ) );
+			else
+				kArray[ n ] = null;
+		}
+		return kArray;
 	}
 
 }
