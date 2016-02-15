@@ -89,5 +89,11 @@ public final class ObjectConverterTest {
 
 		Assert.assertEquals( "The returned array should have a size of 3.", 3, bArray.length );
 	}
+	
+	
+	@Test
+	public void failTest() {
+		Assert.fail( "Just to test travis." );
+	}
 
 }

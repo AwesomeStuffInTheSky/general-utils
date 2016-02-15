@@ -6,7 +6,7 @@ script:
   - ./gradlew test jacocoTestReport
 
 after_success:
-  - exit ./gradlew coveralls
+  - ./gradlew coveralls
   - if [[ "$TRAVIS_TAG" == *"v1."* ]]; then
-      exit ./gradlew bintrayUpload;
+      ./gradlew bintrayUpload;
     fi
