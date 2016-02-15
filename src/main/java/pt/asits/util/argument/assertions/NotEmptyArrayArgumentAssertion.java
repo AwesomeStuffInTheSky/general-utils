@@ -11,10 +11,10 @@ public enum NotEmptyArrayArgumentAssertion implements ArgumentAssertion<Object[]
 
 	@Override
 	public void assertArgument( Object[] argument, String argumentName ) {
-		if( argumentName == null || argumentName.trim().isEmpty() )
-			throw new IllegalArgumentException( "The argument 'argumentName' cannot be null or empty." );
-		if( argument == null || argument.length == 0 || this.isEmpty( argument ) )
-			throw new IllegalArgumentException( String.format( "The argument '%s' cannot be null or empty.", argumentName ) );
+		Argument.assertNotEmpty( argumentName, "argumentName" );
+		Argument.assertNotNull( argument, argumentName );
+		if( argument.length == 0 || this.isEmpty( argument ) )
+			throw new IllegalArgumentException( String.format( "The argument '%s' cannot be empty.", argumentName ) );
 	}
 	
 	

@@ -13,7 +13,7 @@ public enum NotEmptyStringArgumentAssertion implements ArgumentAssertion<String>
 	public void assertArgument( String argument, String argumentName ) {
 		if( argumentName == null || argumentName.trim().isEmpty() )
 			throw new IllegalArgumentException( "The argument 'argumentName' cannot be null or empty." );
-		if( argument == null || argument.isEmpty() )
+		if( argument == null || argument.trim().isEmpty() )
 			throw new IllegalArgumentException( String.format( "The argument '%s' cannot be null or empty.", argumentName ) );
 	}
 
