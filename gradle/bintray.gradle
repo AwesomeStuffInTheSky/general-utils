@@ -49,7 +49,7 @@ bintray {
 		userOrg = 'awesomestuffinthesky'
 		name = archivesBaseName
 		version {
-			vcsTag = 'v' + version;
+			vcsTag = 'v1.0.0'
 		}
 	}
 }
