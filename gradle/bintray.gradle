@@ -46,6 +46,7 @@ bintray {
 
 	pkg {
 		repo = 'maven'
+		userOrg = 'awesomestuffinthesky'
 		name = archivesBaseName
 	}
 }
