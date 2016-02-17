@@ -90,21 +90,4 @@ public final class NotNullArgumentAssertionTest extends EnumTest<NotNullArgument
 		Assert.fail( "An exception should have been throwed." );
 	}
 
-
-	@Test
-	public void assertArgumentUsingTwoArgumentsTest() {
-		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "someName1", new Object(), "someName2" );
-		// To improve code quality, no real usefulness
-		Assert.assertTrue( true );
-	}
-
-
-	@Test
-	public void assertArgumentUsingThreeArgumentsTest() {
-		NotNullArgumentAssertion.INSTANCE.assertArgument( "someString", "someName1", new Object(), "someName2", "anotherString",
-				"someName3" );
-		// To improve code quality, no real usefulness
-		Assert.assertTrue( true );
-	}
-
 }
