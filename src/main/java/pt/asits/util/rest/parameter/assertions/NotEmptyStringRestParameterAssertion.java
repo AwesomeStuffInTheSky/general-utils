@@ -27,7 +27,7 @@ public enum NotEmptyStringRestParameterAssertion implements RestParameterAsserti
 
 	@Override
 	public void assertQueryParameter( String parameter, String queryParameterName ) throws ClientErrorException {
-		Argument.assertNotEmpty( queryParameterName, "pathParameterName" );
+		Argument.assertNotEmpty( queryParameterName, "queryParameterName" );
 
 		if( parameter == null || parameter.trim().isEmpty() ) {
 			String error = String.format( "The query parameter '%s' cannot be null or empty.", queryParameterName );
