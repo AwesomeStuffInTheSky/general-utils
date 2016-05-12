@@ -6,7 +6,7 @@ import pt.asits.util.argument.assertions.NotEmptyStringArgumentAssertion;
 import pt.asits.util.argument.assertions.NotNullArgumentAssertion;
 
 
-public abstract class ArgumentAssertions {
+public final class ArgumentAssertions {
 
 
 	public static void assertNotNull( Object argument, String argumentName ) {

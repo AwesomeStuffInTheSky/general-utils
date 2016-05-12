@@ -14,17 +14,17 @@ import pt.asits.util.exceptions.ConversionException;
 public interface ObjectConverter<T, K> {
 
 
-	public K convert( T t ) throws ConversionException;
+	public K convert( T object ) throws ConversionException;
 
 
-	default public Set<K> convertSet( Set<T> tSet ) throws ConversionException {
+	public default Set<K> convertSet( Set<T> tSet ) throws ConversionException {
 		NotNullArgumentAssertion.INSTANCE.assertArgument( tSet, "tSet" );
 		Set<K> kSet = new LinkedHashSet<>();
 		for( T t : tSet ) {
-			if( t != null )
-				kSet.add( this.convert( t ) );
-			else
+			if( t == null )
 				kSet.add( null );
+			else
+				kSet.add( this.convert( t ) );
 		}
 		return kSet;
 	}
@@ -49,10 +49,10 @@ public interface ObjectConverter<T, K> {
 		NotNullArgumentAssertion.INSTANCE.assertArgument( tArray, "tArray" );
 		K[] kArray = (K[])Array.newInstance( clazz, tArray.length );
 		for( int n = 0; n < tArray.length; n++ ) {
-			if( tArray[ n ] != null )
-				kArray[ n ] = ( this.convert( tArray[ n ] ) );
-			else
+			if( tArray[ n ] == null )
 				kArray[ n ] = null;
+			else
+				kArray[ n ] = this.convert( tArray[ n ] );
 		}
 		return kArray;
 	}

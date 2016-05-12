@@ -7,7 +7,9 @@ public class ConversionException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
 
-	public ConversionException() {}
+	public ConversionException() {
+		// Default constructor
+	}
 
 
 	public ConversionException( String message ) {

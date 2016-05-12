@@ -9,7 +9,7 @@ import pt.asits.util.assertion.assertions.NotNullAssertion;
 import pt.asits.util.assertion.assertions.NullAssertion;
 
 
-public abstract class Assertions {
+public final class Assertions {
 
 
 	public static boolean assertNotNull( Object object ) {
@@ -27,13 +27,13 @@ public abstract class Assertions {
 	}
 
 
-	public static boolean assertEmpty( String string ) {
-		return EmptyStringAssertion.INSTANCE.assertion( string );
+	public static boolean assertNotEmpty( Object[] array ) {
+		return NotEmptyArrayAssertion.INSTANCE.assertion( array );
 	}
 
 
-	public static boolean assertNotEmpty( Object[] array ) {
-		return NotEmptyArrayAssertion.INSTANCE.assertion( array );
+	public static boolean assertEmpty( String string ) {
+		return EmptyStringAssertion.INSTANCE.assertion( string );
 	}
 
 
