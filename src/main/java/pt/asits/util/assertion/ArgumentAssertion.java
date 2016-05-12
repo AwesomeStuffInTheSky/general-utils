@@ -1,4 +1,4 @@
-package pt.asits.util;
+package pt.asits.util.assertion;
 
 
 public interface ArgumentAssertion<T> {

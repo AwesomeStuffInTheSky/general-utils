@@ -1,4 +1,4 @@
-package pt.asits.util.argument.assertions;
+package pt.asits.util.junit;
 
 
 import java.lang.reflect.InvocationTargetException;
@@ -9,11 +9,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public abstract class EnumTest<T extends Enum<?>> {
+public abstract class AbstractSingletonEnumTest<T extends Enum<?>> {
 
 
 	@Test
-	public void valuesTest() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
+	public void valuesShouldReturnEnumArrayWithLengthOf1() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException {
 		@SuppressWarnings( "unchecked" )
 		Class<T> clazz = (Class<T>)( (ParameterizedType)getClass().getGenericSuperclass() ).getActualTypeArguments()[ 0 ];
@@ -25,7 +25,7 @@ public abstract class EnumTest<T extends Enum<?>> {
 
 
 	@Test
-	public void valueOfTest()
+	public void valueOfShouldReturnInstanceOfEnum()
 			throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		@SuppressWarnings( "unchecked" )
 		Class<T> clazz = (Class<T>)( (ParameterizedType)getClass().getGenericSuperclass() ).getActualTypeArguments()[ 0 ];

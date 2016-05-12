@@ -1,7 +1,12 @@
-package pt.asits.util.argument.assertions;
+package pt.asits.util.assertion;
 
 
-public abstract class Argument {
+import pt.asits.util.argument.assertions.NotEmptyArrayArgumentAssertion;
+import pt.asits.util.argument.assertions.NotEmptyStringArgumentAssertion;
+import pt.asits.util.argument.assertions.NotNullArgumentAssertion;
+
+
+public abstract class ArgumentAssertions {
 
 
 	public static void assertNotNull( Object argument, String argumentName ) {

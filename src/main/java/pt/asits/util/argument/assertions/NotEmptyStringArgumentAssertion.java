@@ -1,7 +1,8 @@
 package pt.asits.util.argument.assertions;
 
 
-import pt.asits.util.ArgumentAssertion;
+import pt.asits.util.assertion.ArgumentAssertion;
+import pt.asits.util.assertion.Assertions;
 
 
 public enum NotEmptyStringArgumentAssertion implements ArgumentAssertion<String> {
@@ -11,10 +12,11 @@ public enum NotEmptyStringArgumentAssertion implements ArgumentAssertion<String>
 
 	@Override
 	public void assertArgument( String argument, String argumentName ) {
-		if( argumentName == null || argumentName.trim().isEmpty() )
+		if( Assertions.assertEmpty( argumentName ) )
 			throw new IllegalArgumentException( "The argument 'argumentName' cannot be null or empty." );
-		if( argument == null || argument.trim().isEmpty() )
-			throw new IllegalArgumentException( String.format( "The argument '%s' cannot be null or empty.", argumentName ) );
+		if( Assertions.assertEmpty( argumentName ) )
+			throw new IllegalArgumentException(
+					String.format( "The argument '%s' cannot be null or empty.", argumentName ) );
 	}
 
 }
