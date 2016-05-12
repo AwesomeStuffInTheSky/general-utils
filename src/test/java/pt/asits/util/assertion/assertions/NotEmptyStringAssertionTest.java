@@ -7,6 +7,11 @@ import org.junit.Test;
 import pt.asits.util.junit.AbstractSingletonEnumTest;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ */
 public final class NotEmptyStringAssertionTest extends AbstractSingletonEnumTest<NotEmptyStringAssertion> {
 
 

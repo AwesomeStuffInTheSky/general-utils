@@ -11,6 +11,13 @@ import pt.asits.util.argument.assertions.NotNullArgumentAssertion;
 import pt.asits.util.exceptions.ConversionException;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ * @param <T>
+ * @param <K>
+ */
 public interface ObjectConverter<T, K> {
 
 

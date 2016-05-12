@@ -5,6 +5,11 @@ import pt.asits.util.assertion.Assertion;
 import pt.asits.util.assertion.Assertions;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ */
 public enum EmptyStringAssertion implements Assertion<String> {
 
 	INSTANCE;

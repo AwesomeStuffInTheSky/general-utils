@@ -6,6 +6,11 @@ import pt.asits.util.assertion.ArgumentAssertions;
 import pt.asits.util.assertion.Assertions;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ */
 public enum NotNullArgumentAssertion implements ArgumentAssertion<Object> {
 
 	INSTANCE;

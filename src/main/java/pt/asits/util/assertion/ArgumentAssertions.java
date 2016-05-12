@@ -6,6 +6,11 @@ import pt.asits.util.argument.assertions.NotEmptyStringArgumentAssertion;
 import pt.asits.util.argument.assertions.NotNullArgumentAssertion;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ */
 public final class ArgumentAssertions {
 
 

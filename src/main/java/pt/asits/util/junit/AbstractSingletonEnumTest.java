@@ -9,6 +9,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ * @param <T>
+ */
 public abstract class AbstractSingletonEnumTest<T extends Enum<?>> {
 
 

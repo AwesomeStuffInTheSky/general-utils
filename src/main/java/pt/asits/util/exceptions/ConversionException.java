@@ -1,6 +1,11 @@
 package pt.asits.util.exceptions;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ */
 public class ConversionException extends RuntimeException {
 
 

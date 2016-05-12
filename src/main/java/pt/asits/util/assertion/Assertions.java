@@ -9,6 +9,11 @@ import pt.asits.util.assertion.assertions.NotNullAssertion;
 import pt.asits.util.assertion.assertions.NullAssertion;
 
 
+/**
+ * 
+ * @author Pedro Caleia
+ *
+ */
 public final class Assertions {
 
 
