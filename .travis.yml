@@ -8,3 +8,6 @@ script:
   - if [[ "$TRAVIS_TAG" == *"v1."* ]]; then
       ./gradlew bintrayUpload;
     fi
+    
+after_success:
+  - cat build/reports/jacoco/test/jacocoTestReport.xml
